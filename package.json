@@ -12,7 +12,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "browserify": "^4.2.3",
+    "browserify": "^5.11.0",
     "glob": "^4.0.5",
     "gulp": "^3.8.7",
     "partialify": "^3.1.1",

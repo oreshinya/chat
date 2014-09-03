@@ -5,8 +5,9 @@ var source     = require('vinyl-source-stream');
 var glob       = require('glob');
 
 gulp.task('build', function(){
-  var files = glob.sync('./frontend/**/*.js');
-  return browserify(files).transform(partialify)
+  //var files = glob.sync('./frontend/**/*.js');
+  //return browserify(files).transform(partialify)
+  return browserify('./frontend/index.js').transform(partialify)
                           .bundle()
                           .pipe(source('browserified.js'))
                           .pipe(gulp.dest('./app/assets/javascripts'));
