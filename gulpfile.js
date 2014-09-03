@@ -1,14 +1,16 @@
 var gulp       = require('gulp');
 var browserify = require('browserify');
+var partialify = require('partialify');
 var source     = require('vinyl-source-stream');
-var brfs       = require("brfs");
+var glob       = require('glob');
 
 gulp.task('build', function(){
-  return browserify('./frontend/index.js')
-  .transform(brfs)
-  .bundle()
-  .pipe(source('browserified.js'))
-  .pipe(gulp.dest('./app/assets/javascripts'));
+  //var files = glob.sync('./frontend/**/*.js');
+  //return browserify(files).transform(partialify)
+  return browserify('./frontend/index.js').transform(partialify)
+                          .bundle()
+                          .pipe(source('browserified.js'))
+                          .pipe(gulp.dest('./app/assets/javascripts'));
 });
 
 gulp.task('watch', ["build"], function(){
