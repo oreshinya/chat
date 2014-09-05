@@ -1,6 +1,12 @@
-var Home = require('./home/index.js');
+var Router = require("director").Router;
 
 $(document).ready(function(){
-  var homeVM = new Home();
-  homeVM.$appendTo("#app");
+  var routes = {
+    "/": require('./route-actions/go-home'),
+    "/rooms/:roomName": require('./route-actions/go-room')
+  };
+  var router = new Router(routes);
+  router.init();
+
+  location.href = "#/";
 });
