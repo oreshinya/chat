@@ -47,10 +47,10 @@ var Room = Vue.extend({
       connection.channel.bind("new_post", $.proxy(this.onNewPost, this));
     },
 
-    //TODO サーバーからpushできなものか...
     subscribeStatus: function() {
       this.getStatus();
-      setInterval($.proxy(this.getStatus, this), 60 * 1000);
+      connection.channel.bind("subscriber_part", $.proxy(this.getStatus, this));
+      connection.channel.bind("subscriber_join", $.proxy(this.getStatus, this));
     },
 
     getStatus: function() {

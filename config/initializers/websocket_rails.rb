@@ -41,7 +41,7 @@ WebsocketRails.setup do |config|
   # notified when other clients join and part the channel. If you are
   # using the UserManager, the current_user object will be sent along
   # with the event.
-  # config.broadcast_subscriber_events = true
+  config.broadcast_subscriber_events = true
 
   # Used as the key for the WebsocketRails.users Hash. This method
   # will be called on the `current_user` object in your controller
