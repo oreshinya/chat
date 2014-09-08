@@ -1,4 +1,6 @@
 class Room < ActiveRecord::Base
+  SUBSCRIBER_LIMIT_PER_CHANNEL = 10
+
   has_many :posts
 
   def channel
@@ -11,5 +13,9 @@ class Room < ActiveRecord::Base
 
   def subscribers_count
     channel.subscribers.size
+  end
+
+  def reached_subscriber_limit?
+    subscribers_count >= SUBSCRIBER_LIMIT_PER_CHANNEL
   end
 end

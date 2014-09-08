@@ -1,10 +1,14 @@
 class RoomsController < WebsocketRails::BaseController
   def create
     room = Room.find_or_create_by(name: message[:room_name])
-    if room
+    if room && !room.reached_subscriber_limit?
       trigger_success room.posts
     else
-      trigger_error
+      error_status = 0
+      if room.reached_subscriber_limit?
+        error_status = 1
+      end
+      trigger_failure({statusCode: error_status})
     end
   end
 
@@ -15,7 +19,7 @@ class RoomsController < WebsocketRails::BaseController
       trigger_success
       room.broadcast_post post
     else
-      trigger_error
+      trigger_failure
     end
   end
 

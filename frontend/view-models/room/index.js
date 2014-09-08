@@ -38,8 +38,12 @@ var Room = Vue.extend({
       this.subscribeStatus();
     },
 
-    onConnectError: function() {
+    onConnectError: function(error) {
       this.occurredConnectionError = true;
+      if (error.statusCode === 1) {
+        alert('reached member limit.');
+        location.href = "#/";
+      }
     },
 
     subscribePosts: function() {
