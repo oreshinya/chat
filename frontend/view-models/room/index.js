@@ -69,7 +69,7 @@ var Room = Vue.extend({
     },
 
     onNewPost: function(post) {
-      this.posts.push(post);
+      this.posts.unshift(post);
     },
 
     onPostBtnClick: function() {
