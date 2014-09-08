@@ -1,4 +1,5 @@
 var Vue = require('vue');
+var utils = require('../../libs/utils');
 var Home = Vue.extend({
   template: require('./index.html'),
   data: {
@@ -6,14 +7,11 @@ var Home = Vue.extend({
   },
   methods: {
     onGoRoomBtnClick: function() {
-      if (this.isEmptyRoomName()) {
+      if (utils.checkBlankStr(this.roomName)) {
         alert('Please input any room name');
         return;
       }
       location.href = "#/rooms/"+this.roomName;
-    },
-    isEmptyRoomName: function() {
-      return (!this.roomName || this.roomName.trim() === "");
     }
   }
 });

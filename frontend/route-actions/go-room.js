@@ -5,4 +5,5 @@ module.exports = function(roomName) {
   var roomVM = new Room();
   roomVM.roomName = roomName;
   roomVM.$appendTo("#app");
+  roomVM.connect();
 };
