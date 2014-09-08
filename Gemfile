@@ -16,7 +16,6 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'websocket-rails'
 
-gem 'invoker'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -27,6 +26,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
+gem 'invoker', group: :development
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
