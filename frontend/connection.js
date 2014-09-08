@@ -2,6 +2,7 @@ module.exports = {
   dispatcher: null,
   init: function() {
     this.dispatcher = new WebSocketRails("localhost:3000/websocket");
+    this.channel = null;
   },
 
   dispatch: function(evt, opts) {
@@ -20,5 +21,9 @@ module.exports = {
 
   sendPost: function(opts) {
     this.dispatch("rooms.create_post", opts);
+  },
+
+  subscribe: function(channelName) {
+    this.channel = this.dispatcher.subscribe(channelName);
   }
 };

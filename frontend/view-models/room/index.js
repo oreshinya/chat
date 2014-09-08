@@ -28,10 +28,21 @@ var Room = Vue.extend({
       this.loaded = true;
       this.occurredConnectionError = false;
       this.posts = posts;
+
+      this.subscribePosts();
     },
 
     onConnectError: function() {
       this.occurredConnectionError = true;
+    },
+
+    subscribePosts: function() {
+      connection.subscribe(this.roomName);
+      connection.channel.bind("new_post", $.proxy(this.onNewPost, this));
+    },
+
+    onNewPost: function(post) {
+      this.posts.push(post);
     },
 
     onPostBtnClick: function() {
@@ -46,8 +57,7 @@ var Room = Vue.extend({
       });
     },
 
-    onSendPostSuccess: function(post) {
-      this.posts.push(post);
+    onSendPostSuccess: function() {
       this.tmpPost = null;
     },
 
