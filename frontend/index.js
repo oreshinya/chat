@@ -1,8 +1,8 @@
 var Router = require("director").Router;
-var observer = require("./observer");
+var connection = require("./connection");
 
 $(document).ready(function(){
-  observer.init();
+  connection.init();
 
   var routes = {
     "/": require('./route-actions/go-home'),

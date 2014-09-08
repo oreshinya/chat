@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140908030558) do
+ActiveRecord::Schema.define(version: 20140908061338) do
+
+  create_table "posts", force: true do |t|
+    t.integer  "room_id"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "posts", ["room_id"], name: "index_posts_on_room_id", using: :btree
 
   create_table "rooms", force: true do |t|
     t.string   "name"

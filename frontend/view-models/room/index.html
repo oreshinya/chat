@@ -1,3 +1,10 @@
 <h2>{{ roomName }}</h2>
 <p v-if="occurredConnectionError" v-on="click: connect">再接続</p>
 <p v-if="!loaded">読み込み中</p>
+<div v-if="loaded">
+  <ul>
+    <li v-repeat="post: posts">{{post.body}}</li>
+  </ul>
+  <textarea cols="30" rows="10" v-model="tmpPost"></textarea>
+  <input type="button" value="Post" v-on="click: onPostBtnClick">
+</div>
