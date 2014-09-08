@@ -5,6 +5,9 @@
   <ul>
     <li v-repeat="post: posts">{{post.body}}</li>
   </ul>
-  <textarea cols="30" rows="10" v-model="tmpPost"></textarea>
-  <input type="button" value="Post" v-on="click: onPostBtnClick">
+  <div>
+    <p v-if="sendPostError">送信失敗しました</p>
+    <textarea cols="30" rows="10" v-model="tmpPost"></textarea>
+    <input type="button" value="Post" v-on="click: onPostBtnClick">
+  </div>
 </div>

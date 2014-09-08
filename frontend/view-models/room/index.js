@@ -9,6 +9,7 @@ var Room = Vue.extend({
     roomName: null,
     loaded: false,
     occurredConnectionError: false,
+    sendPostError: false,
     connectCount: null,
     tmpPost: null,
     posts: []
@@ -61,11 +62,12 @@ var Room = Vue.extend({
     },
 
     onSendPostSuccess: function() {
+      this.sendPostError = false;
       this.tmpPost = null;
     },
 
     onSendPostError: function() {
-      alert('hogeeeeeeee');
+      this.sendPostError = true;
     }
 
   }
