@@ -9,6 +9,9 @@ $(document).ready(function(){
     "/rooms/:roomName": require('./route-actions/go-room')
   };
   var router = new Router(routes);
+  router.configure({
+    on: $.proxy(connection.unsubscribe, connection)
+  });
   router.init();
 
   if (location.hash === "") {

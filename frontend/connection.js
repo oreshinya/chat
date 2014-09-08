@@ -28,6 +28,14 @@ module.exports = {
   },
 
   subscribe: function(channelName) {
+    this.unsubscribe();
     this.channel = this.dispatcher.subscribe(channelName);
+  },
+
+  unsubscribe: function() {
+    if (this.channel) {
+      this.dispatcher.unsubscribe(this.channel.name);
+    }
+    this.channel = null;
   }
 };
