@@ -1,8 +1,10 @@
 var Vue = require('vue');
 var utils = require('../../libs/utils');
 var connection = require('../../connection');
+
 var Room = Vue.extend({
   template: require('./index.html'),
+
   data: {
     roomName: null,
     loaded: false,
@@ -11,6 +13,7 @@ var Room = Vue.extend({
     tmpPost: null,
     posts: []
   },
+
   methods: {
 
     connect: function() {
@@ -66,5 +69,7 @@ var Room = Vue.extend({
     }
 
   }
+
 });
+
 module.exports = Room;
