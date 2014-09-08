@@ -13,9 +13,16 @@ class RoomsController < WebsocketRails::BaseController
     post = room.posts.create(body: message[:tmp_post])
     if post
       trigger_success
-      WebsocketRails[room.name].trigger(:new_post, post)
+      room.broadcast_post post
     else
       trigger_error
     end
+  end
+
+  def status
+    room = Room.where(name: message[:room_name]).first
+    trigger_success({
+      subscribersCount: room.subscribers_count
+    })
   end
 end

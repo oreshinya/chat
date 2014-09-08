@@ -12,6 +12,7 @@ var Room = Vue.extend({
     sendPostError: false,
     connectCount: null,
     tmpPost: null,
+    subscribersCount: "---",
     posts: []
   },
 
@@ -34,6 +35,7 @@ var Room = Vue.extend({
       this.posts = posts;
 
       this.subscribePosts();
+      this.subscribeStatus();
     },
 
     onConnectError: function() {
@@ -43,6 +45,23 @@ var Room = Vue.extend({
     subscribePosts: function() {
       connection.subscribe(this.roomName);
       connection.channel.bind("new_post", $.proxy(this.onNewPost, this));
+    },
+
+    //TODO サーバーからpushできなものか...
+    subscribeStatus: function() {
+      this.getStatus();
+      setInterval($.proxy(this.getStatus, this), 60 * 1000);
+    },
+
+    getStatus: function() {
+      connection.getStatus({
+        params: {room_name: this.roomName},
+        success: $.proxy(this.onGetStatusSuccess, this)
+      });
+    },
+
+    onGetStatusSuccess: function(roomStatus) {
+      this.subscribersCount = roomStatus.subscribersCount;
     },
 
     onNewPost: function(post) {

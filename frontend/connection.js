@@ -23,6 +23,10 @@ module.exports = {
     this.dispatch("rooms.create_post", opts);
   },
 
+  getStatus: function(opts) {
+    this.dispatch("rooms.status", opts);
+  },
+
   subscribe: function(channelName) {
     this.channel = this.dispatcher.subscribe(channelName);
   }
