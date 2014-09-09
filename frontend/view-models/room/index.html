@@ -1,14 +1,27 @@
-<h2 v-text="roomName"></h2>
-<p v-if="occurredConnectionError" v-on="click: connect">再接続</p>
-<p v-if="!loaded">読み込み中</p>
-<div v-if="loaded">
-  <p>接続数: <span v-text="subscribersCount"></span>人</p>
-  <ul>
-    <li v-repeat="post: posts" v-text="post.body"></li>
-  </ul>
-  <div>
-    <p v-if="sendPostError">送信失敗しました</p>
-    <textarea cols="30" rows="10" v-model="tmpPost"></textarea>
-    <input type="button" value="Post" v-on="click: onPostBtnClick">
+<div id="room" class="pure-g">
+
+  <div class="pure-u-2-5 left-content">
+    <p class="left-content-header">
+      Room 「<span v-text="roomName"></span>」 ConnectingPeople: <span v-text="subscribersCount"></span>
+    </p>
+    <div v-if="loaded">
+      <p v-if="sendPostError">Failed Post...</p>
+      <form class="pure-form">
+        <textarea cols="40" rows="12" v-model="tmpPost"></textarea>
+        <br/>
+        <br/>
+        <input class="pure-button" type="button" value="Post" v-on="click: onPostBtnClick">
+      </form>
+    </div>
+  </div>
+
+  <div class="pure-u-3-5 right-content">
+    <p v-if="!loaded">Now Loading...</p>
+    <div v-if="loaded">
+      <ul>
+        <li v-repeat="post: posts" v-text="post.body"></li>
+      </ul>
+    </div>
+    <p v-if="occurredConnectionError" v-on="click: connect">Reconnect</p>
   </div>
 </div>
