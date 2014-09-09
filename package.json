@@ -1,26 +1,29 @@
 {
   "name": "chat",
-  "version": "0.0.0",
-  "description": "== README",
-  "main": "index.js",
+  "version": "1.0.0",
+  "description": "``` bundle install --path vendor/bundle bundle exec rake db:create bundle exec rake db:migrate ```",
+  "main": "gulpfile.js",
   "directories": {
     "test": "test"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "browserify": "^5.11.0",
+    "director": "^1.2.3",
     "glob": "^4.0.5",
     "gulp": "^3.8.7",
     "gulp-plumber": "^0.6.5",
     "partialify": "^3.1.1",
-    "vinyl-source-stream": "^0.1.1"
-  },
-  "dependencies": {
-    "director": "^1.2.3",
+    "vinyl-source-stream": "^0.1.1",
     "vue": "^0.10.6"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:oreshinya/chat.git"
+  },
+  "author": "",
+  "license": "MIT"
 }
