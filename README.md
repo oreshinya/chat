@@ -1,3 +1,11 @@
+#Chat Sample
+This is created for paractice.
+
+* websocket-rails
+* gulp
+* browserify
+* vue
+
 #Setup
 ```
 bundle install --path vendor/bundle
