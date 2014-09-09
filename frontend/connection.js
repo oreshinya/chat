@@ -1,7 +1,7 @@
 module.exports = {
   dispatcher: null,
   init: function() {
-    this.dispatcher = new WebSocketRails("localhost:3000/websocket");
+    this.dispatcher = new WebSocketRails("ancient-ridge-5202.herokuapp.com/websocket");
     this.channel = null;
   },
 
