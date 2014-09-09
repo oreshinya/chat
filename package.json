@@ -25,5 +25,8 @@
     "url": "git@bitbucket.org:oreshinya/chat.git"
   },
   "author": "",
+  "engines": {
+    "node": "0.10.29"
+  },
   "license": "MIT"
 }
