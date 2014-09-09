@@ -15,6 +15,5 @@
 /log/*.log
 /tmp
 /vendor/bundle
-/config/database.yml
 
 /app/assets/javascripts/browserified.js
