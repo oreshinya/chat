@@ -3,6 +3,8 @@
   <div class="pure-u-2-5 left-content">
     <p class="left-content-header">
       Room 「<span v-text="roomName"></span>」 ConnectingPeople: <span v-text="subscribersCount"></span>
+      <br/>
+      <span class="message">This link is bookmarkable.</span>
     </p>
     <div v-if="loaded">
       <p v-if="sendPostError">Failed Post...</p>
