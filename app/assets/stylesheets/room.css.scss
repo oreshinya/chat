@@ -1,11 +1,24 @@
 #room {
   .left-content {
     text-align:center;
+    position: fixed;
+    overflow: auto;
   }
   .left-content-header {
     color: #FFFFFF;
     span {
       font-weight: bold;
+    }
+  }
+
+  .right-content {
+    position: relative;
+    left: 40%;
+    background: #FFFFFF;
+    .post {
+      padding: 10px;
+      border-bottom: 1px solid #DDDDDD;
+      min-height: 70px;
     }
   }
 }
