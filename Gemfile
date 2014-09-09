@@ -16,7 +16,6 @@ end
 
 group :production do
   gem 'rails_12factor'
-  gem 'puma'
 end
 
 # Use Capistrano for deployment
