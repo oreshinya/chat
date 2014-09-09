@@ -1,3 +1,10 @@
-<p>Input room name</p>
-<input type="text" v-model="roomName">
-<input type="button" value="Go Chat Room" v-on="click: onGoRoomBtnClick">
+<div id="home">
+  <div class="centering">
+    <form class="pure-form">
+      <input class="pure-input-1" type="text" v-model="roomName" placeholder="Input Room Name!">
+      <br/>
+      <br/>
+      <input type="button" class="pure-button" value="Go Chat Room" v-on="click: onGoRoomBtnClick">
+    </form>
+  </div>
+</div>

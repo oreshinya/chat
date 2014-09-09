@@ -1,0 +1,21 @@
+html, body {
+  height: 100%;
+}
+
+.header {
+  height: 50px;
+  background: #2d3e50 !important;
+
+  h1 {
+    font-size: 30px !important;
+    color: #FFFFFF !important;
+  }
+}
+
+.container {
+  .justify-header {
+    height: 50px;
+  }
+  background: #1f8dd6 !important;
+  height: 100%;
+}

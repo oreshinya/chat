@@ -2,12 +2,19 @@
 <html>
 <head>
   <title>Chat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <h1>Chat</h1>
-  <%= yield %>
+  <div class="header home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
+      <h1 class="pure-menu-heading">Chat</h1>
+  </div>
+  <div class="container">
+    <div class="justify-header"></div>
+    <%= yield %>
+  </div>
+
 </body>
 </html>
