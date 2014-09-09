@@ -14,11 +14,27 @@
   .right-content {
     position: relative;
     left: 40%;
-    background: #FFFFFF;
     .post {
+      background: #FFFFFF;
       padding: 10px;
       border-bottom: 1px solid #DDDDDD;
       min-height: 70px;
     }
+  }
+
+  .loading {
+    text-align: center;
+    margin-top: 50px;
+    color: #FFFFFF;
+    font-weight: bold;
+  }
+
+  .reconnect-button {
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background: rgb(202, 60, 60);
+    display: block;
+    margin: 20px auto 0;
   }
 }

@@ -16,12 +16,12 @@
   </div>
 
   <div class="pure-u-3-5 right-content">
-    <p v-if="!loaded">Now Loading...</p>
+    <div class="loading" v-if="!loaded">Now Loading...</div>
+    <button class="pure-button reconnect-button" v-if="occurredConnectionError" v-on="click: connect">Reconnect</button>
     <div v-if="loaded">
       <div class="post-list">
         <div class="post" v-repeat="post: posts" v-text="post.body"></div>
       </div>
     </div>
-    <p v-if="occurredConnectionError" v-on="click: connect">Reconnect</p>
   </div>
 </div>
